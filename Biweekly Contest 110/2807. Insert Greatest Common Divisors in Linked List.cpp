@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+/*
+
+
 class Solution {
 public:
     ListNode* insertGreatestCommonDivisors(ListNode* head) {
@@ -12,9 +16,13 @@ public:
             temp->next=newnode;
             temp=newnode->next;
         }
-    return head;
+      return head;
     }
 };
+
+
+
+*/
 
 
 int main(){
