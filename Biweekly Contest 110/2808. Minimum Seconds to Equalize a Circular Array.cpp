@@ -31,7 +31,7 @@ using namespace std;
         
        
         unordered_map<int,int> um;
-        
+
         for(int i=0;i<v.size();i++){
             if(map.count(v[i]) ){
                 um[v[i]]=(max(um[v[i]],i-map[v[i]]+1));
@@ -52,8 +52,7 @@ using namespace std;
 
 
 
-class Solution { 
-public: 
+
     int minimumSeconds(vector<int>& nums) { 
         unordered_map<int,vector<int>> m; 
         int k=nums.size(); 
@@ -63,20 +62,40 @@ public:
         for(auto &a :m){ 
             sort(a.second.begin(), a.second.end()); 
         } 
+
+
         int res = INT_MAX; 
-        for(auto &a: m){ 
+
+        // cout<<1<<endl;
+
+
+        for(auto &a: m) {
+
             int sz = a.second.size(); 
+
+
+            cout<<((k-a.second.back()-1+a.second[0])/2)<<" "<<((k-a.second.back()-1+a.second[0])%2)<<endl;
+
+
             int ans = (k-a.second.back()-1+a.second[0])/2+(k-a.second.back()-1+a.second[0])%2; 
            
-            for(int i=1;i< sz;i++){ 
-                ans = max(ans, ((a.second[i]-a.second[i-1]-1)/2)+((a.second[i]-a.second[i-1]+1)%2)); 
+
+            for(int i=1;i< sz;i++) { 
+
+              ans = max(ans, ((a.second[i]-a.second[i-1]-1)/2)+((a.second[i]-a.second[i-1]+1)%2)); 
+
             } 
              
+
             res=min(res, ans); 
+
+
         } 
+
         return res; 
+
     } 
-};
+
 
 
 int main()
@@ -94,9 +113,12 @@ int main()
   }
 
 
+cout<<1<<endl;
+cout<<endl;
 
 
- cout<< minimumSeconds1(arr);
+
+ cout<< minimumSeconds(arr);
 
 
 }
