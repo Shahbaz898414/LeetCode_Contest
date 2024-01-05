@@ -55,7 +55,7 @@ int minimumSeconds1(vector<int> &nums) {
 
 }
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 int minimumSeconds(vector<int> &nums) {
 
@@ -113,19 +113,10 @@ int minimumSeconds(vector<int> &nums) {
   }
 
 
-  // cout<<endl;
-
-
   return res;
 
 
 }
-
-
-
-
-
-
 
 
 
@@ -149,56 +140,6 @@ int main()
 
   cout << minimumSeconds(arr);
 
-  
+
 }
 
-/*
-
-nums[(i - 1 + n) % n], or nums[(i + 1) % n].
-n=7
-i=3
-
-
-class Solution {
-public:
-    int minimumSeconds(vector<int>& nums) {
-        unordered_map<int,vector<int>> m;
-        int k=nums.size();
-        for(int i=0;i<nums.size();i++){
-            m[nums[i]].push_back(i);
-        }
-        for(auto &a :m){
-            sort(a.second.begin(), a.second.end());
-        }
-        int res = INT_MAX;
-        for(auto &a: m){
-            int sz = a.second.size();
-            int ans = (k-a.second.back()-1+a.second[0])/2+(k-a.second.back()-1+a.second[0])%2;
-
-            for(int i=1;i< sz;i++){
-                ans = max(ans, ((a.second[i]-a.second[i-1]-1)/2)+((a.second[i]-a.second[i-1]+1)%2));
-            }
-
-            res=min(res, ans);
-        }
-        return res;
-    }
-};
-
-*/
-
-
-
-
-
-/*
-
-
-
-You
-https://www.facebook.com/reel/264031929691603?s=yWDuG2&fs=e&mibextid=Nif5oz
-
-itachi
-
-00:24 /
-*/
