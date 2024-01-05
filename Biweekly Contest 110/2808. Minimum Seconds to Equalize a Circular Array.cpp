@@ -71,15 +71,15 @@ int minimumSeconds(vector<int> &nums) {
     sort(a.second.begin(), a.second.end());
   }
 
-  for(auto it:m){
-    cout<<it.first<<endl;
-    for(auto i:it.second){
-      cout<<i+1<<" ";
-    }
-    cout<<endl;
-  }
+  // for(auto it:m){
+  //   cout<<it.first<<endl;
+  //   for(auto i:it.second){
+  //     cout<<i+1<<" ";
+  //   }
+  //   cout<<endl;
+  // }
 
-  cout<<endl;
+  // cout<<endl;
 
   int res = INT_MAX;
 
@@ -95,7 +95,7 @@ int minimumSeconds(vector<int> &nums) {
     // cout << ((k - a.second.back() - 1 + a.second[0]) / 2) << " " << ((k - a.second.back() - 1 + a.second[0]) % 2) << endl;
 
 
-    int ans = (k - a.second.back() - 1 + a.second[0]) / 2 + (k - a.second.back() - 1 + a.second[0]) % 2;
+    int ans = ((k - a.second.back() - 1 + a.second[0]) / 2) + ((k - a.second.back() - 1 + a.second[0]) % 2);
 
 
     for (int i = 1; i < sz; i++) {
@@ -113,7 +113,7 @@ int minimumSeconds(vector<int> &nums) {
   }
 
 
-  cout<<endl;
+  // cout<<endl;
 
 
   return res;
@@ -144,10 +144,12 @@ int main()
     cin >> arr[i];
   }
 
-  cout << 1 << endl;
-  cout << endl;
+  // cout << 1 << endl;
+  // cout << endl;
 
   cout << minimumSeconds(arr);
+
+  
 }
 
 /*
