@@ -92,7 +92,7 @@ int minimumSeconds(vector<int> &nums) {
     int sz = a.second.size();
 
 
-    // cout << ((k - a.second.back() - 1 + a.second[0]) / 2) << " " << ((k - a.second.back() - 1 + a.second[0]) % 2) << endl;
+   
 
 
     int ans = ((k - a.second.back() - 1 + a.second[0]) / 2) + ((k - a.second.back() - 1 + a.second[0]) % 2);
@@ -131,12 +131,11 @@ int main()
 
   for (int i = 0; i < n; i++)
   {
-    /* code */
+    
     cin >> arr[i];
   }
 
-  // cout << 1 << endl;
-  // cout << endl;
+  
 
   cout << minimumSeconds(arr);
 
