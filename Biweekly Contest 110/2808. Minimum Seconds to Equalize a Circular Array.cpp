@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int minimumSeconds1(vector<int> &nums)
-{
+
+
+int minimumSeconds1(vector<int> &nums) {
   vector<int> v;
   unordered_map<int, int> map;
 
@@ -51,14 +52,14 @@ int minimumSeconds1(vector<int> &nums)
   }
   ans -= 2;
   return (ans / 2 + ans % 2);
+
 }
 
 
 
+int minimumSeconds(vector<int> &nums) {
 
 
-int minimumSeconds(vector<int> &nums)
-{
   unordered_map<int, vector<int>> m;
   int k = nums.size();
   for (int i = 0; i < nums.size(); i++)
@@ -70,6 +71,16 @@ int minimumSeconds(vector<int> &nums)
     sort(a.second.begin(), a.second.end());
   }
 
+  for(auto it:m){
+    cout<<it.first<<endl;
+    for(auto i:it.second){
+      cout<<i+1<<" ";
+    }
+    cout<<endl;
+  }
+
+  cout<<endl;
+
   int res = INT_MAX;
 
   // cout<<1<<endl;
@@ -77,22 +88,37 @@ int minimumSeconds(vector<int> &nums)
   for (auto &a : m)
   {
 
+
     int sz = a.second.size();
 
-    cout << ((k - a.second.back() - 1 + a.second[0]) / 2) << " " << ((k - a.second.back() - 1 + a.second[0]) % 2) << endl;
+
+    // cout << ((k - a.second.back() - 1 + a.second[0]) / 2) << " " << ((k - a.second.back() - 1 + a.second[0]) % 2) << endl;
+
 
     int ans = (k - a.second.back() - 1 + a.second[0]) / 2 + (k - a.second.back() - 1 + a.second[0]) % 2;
 
-    for (int i = 1; i < sz; i++)
-    {
+
+    for (int i = 1; i < sz; i++) {
+
 
       ans = max(ans, ((a.second[i] - a.second[i - 1] - 1) / 2) + ((a.second[i] - a.second[i - 1] + 1) % 2));
+
+
     }
 
+
     res = min(res, ans);
+
+
   }
 
+
+  cout<<endl;
+
+
   return res;
+
+
 }
 
 
@@ -159,3 +185,18 @@ public:
 
 */
 
+
+
+
+
+/*
+
+
+
+You
+https://www.facebook.com/reel/264031929691603?s=yWDuG2&fs=e&mibextid=Nif5oz
+
+itachi
+
+00:24 /
+*/
