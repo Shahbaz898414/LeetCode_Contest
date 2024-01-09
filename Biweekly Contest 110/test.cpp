@@ -1,48 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-
-int numberOfArithmeticSlices(vector<int> &nums)
+void inorder(TreeNode *root, vector<int> &v)
 {
-    int n = nums.size();
-    if (n <= 2) return 0;
-
-    map<long long, int> dp[n + 1];
-    long long ans = 0;
-
-    for (int i = 1; i < n; i++) {
-        for (int j = 0; j < i; j++){
-        
-            long long cnt = 1;
-
-            long long diff=(long long)nums[i] - (long long)nums[j];
-
-            if (dp[j].count(diff)) {
-                cnt = dp[j][diff];
-                dp[i][diff] += cnt;
-                ans += cnt;
-            }
-
-
-            dp[i][diff] += 1;
-
-            cout<<i+1<<" "<<j+1<<" "<<diff<<endl;
+    if (root != NULL)
+    {
+        inorder(root->left, v);
+        if (root->left == NULL && root->right == NULL)
+        {
+            v.push_back(root->val);
         }
-
-
-        cout<<endl;
-
-
+        inorder(root->right, v);
     }
-
- 
-
-
-    return ans;
 }
 
-
+bool leafSimilar(TreeNode *root1, TreeNode *root2)
+{
+    vector<int> v, v1;
+    inorder(root1, v);
+    inorder(root2, v1);
+    return v == v1;
+}
 
 int main()
 {
@@ -54,12 +32,64 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
-        
+
         cin >> arr[i];
     }
 
-   cout<<numberOfArithmeticSlices(arr);
+    cout << numberOfArithmeticSlices(arr);
 }
 
+/*
 
 
+class Solution {
+public:
+    bool leafSimilar(TreeNode* root1, TreeNode* root2) {
+        function<void(TreeNode*, vector<int>&)> collectLeafValues =
+            [&](TreeNode* root, vector<int>& leafValues) {
+                if (!root) {
+                    return;
+                }
+                if (!root->left && !root->right) {
+                    leafValues.push_back(root->val);
+                }
+                collectLeafValues(root->left, leafValues);
+                collectLeafValues(root->right, leafValues);
+            };
+
+        vector<int> leafValues1, leafValues2;
+        collectLeafValues(root1, leafValues1);
+        collectLeafValues(root2, leafValues2);
+
+        return leafValues1 == leafValues2;
+    }
+};
+
+
+
+
+class Solution {
+public:
+    void inorder(TreeNode* root, vector<int> &v)
+    {
+        if(root!=NULL)
+        {
+            inorder(root->left, v);
+            if(root->left == NULL && root->right == NULL)
+            {
+                v.push_back(root->val);
+            }
+            inorder(root->right,v);
+        }
+    }
+
+    bool leafSimilar(TreeNode* root1, TreeNode* root2)
+    {
+        vector<int> v,v1;
+        inorder(root1,v);
+        inorder(root2,v1);
+        return v==v1;
+    }
+};
+
+*/

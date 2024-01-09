@@ -88,7 +88,11 @@ int main()
 
   int result = solution.minimumTime(arr1, brr, x);
   cout << result;
+
 }
+
+
+
 
 /*
 
