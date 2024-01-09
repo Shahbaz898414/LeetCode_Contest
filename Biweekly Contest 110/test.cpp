@@ -16,6 +16,8 @@ void inorder(TreeNode *root, vector<int> &v)
     }
 }
 
+
+
 bool leafSimilar(TreeNode *root1, TreeNode *root2)
 {
     vector<int> v, v1;
@@ -40,7 +42,7 @@ int main()
         cin >> arr[i];
     }
 
-    cout << numberOfArithmeticSlices(arr);
+    // cout << numberOfArithmeticSlices(arr);
 }
 
 
