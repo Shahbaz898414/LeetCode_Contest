@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+/*
 void inorder(TreeNode *root, vector<int> &v)
 {
     if (root != NULL)
@@ -22,6 +24,8 @@ bool leafSimilar(TreeNode *root1, TreeNode *root2)
     return v == v1;
 }
 
+*/
+
 int main()
 {
 
@@ -38,6 +42,9 @@ int main()
 
     cout << numberOfArithmeticSlices(arr);
 }
+
+
+
 
 /*
 
