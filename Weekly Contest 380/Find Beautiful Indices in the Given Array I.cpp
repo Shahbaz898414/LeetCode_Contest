@@ -20,24 +20,33 @@ vector<int> beautifulIndices(string s, string a, string b, int k)
     cout << it << " ";
   }
 
-  cout << endl;
+  cout << endl<<endl;
 
   for (auto it : matchB)
   {
     cout << it << " ";
   }
 
-  cout << endl;
+  cout << endl<<endl;
 
   vector<int> ans;
 
   for (auto &i : matchA)
   {
+
+    cout<<i-k<<" ";
     auto it = lower_bound(matchB.begin(), matchB.end(), i - k);
+    // cout<<it<<" ";
     if ((it != matchB.end()) && (abs(*it - i) <= k))
-      result.push_back(i);
+      ans.push_back(i);
   }
-  return result;
+
+  cout<<endl<<endl;
+
+  return ans;
+
+
+
 }
 
 int main()
@@ -51,9 +60,9 @@ int main()
 
   vector<int> v = beautifulIndices(s, a, b, k);
 
-  // for(auto it:v){
-  //   cout<<it<<" ";
-  // }
+  for(auto it:v){
+    cout<<it<<" ";
+  }
 }
 
 /*
