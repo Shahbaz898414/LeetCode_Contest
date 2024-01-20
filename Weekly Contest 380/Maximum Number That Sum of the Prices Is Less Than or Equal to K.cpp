@@ -1,15 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 typedef long long int ll;
 
-bool IsSet(int bit, ll x)
-{
+
+bool IsSet(int bit, ll x) {
+
   return ((x & (1LL << bit)) > 0);
+  
 }
 
-vector<ll> SetBitsCount(ll x)
-{
+
+
+vector<ll> SetBitsCount(ll x) {
   int highest_bit = 63;
   while (highest_bit >= 0 && !IsSet(highest_bit, x))
     highest_bit--;
@@ -32,17 +36,30 @@ vector<ll> SetBitsCount(ll x)
   return cnt;
 }
 
+
+
 ll SumOfPrices(ll n, int x)
 {
+
+
   vector<ll> cnt_bits = SetBitsCount(n);
 
+
   ll result = 0;
+
+
   for (int i = 63; i >= 0; i--)
     if ((i + 1) % x == 0)
       result += cnt_bits[i];
 
+
   return result;
+
+
 }
+
+
+
 
 long long findMaximumNumber(long long k, int x)
 {
@@ -60,24 +77,49 @@ long long findMaximumNumber(long long k, int x)
   return l;
 }
 
-int main()
-{
 
+
+int main() {
   long long k;
   int x;
-
   cin >> k >> x;
 
   cout << findMaximumNumber(k, x) << endl;
 }
 
+
+
+
+
+
 /*
 
 
-CODEWITHDARSHAN
 
-Specialist
-codeWithDarshan
 
-STATKS SETTINGS LISTS BLOG TEAMS SUBMISSIONS FAVOURITES GROUPS CONTESTS
+
+Binary
+
+0  0000  
+1  0001 
+2  0010 1
+3  0011 1
+4  0100 
+5  0101 
+6  0110 1
+7  0111 1
+8  1000 1
+9  1001 1
+10 1010 2
+11 1011
+12 1100
+13 1101
+14 1110
+15 1111
+
+
+
+
+
+
 */
