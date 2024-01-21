@@ -3,35 +3,96 @@ using namespace std;
 
 int mod = 1e9 + 7;
 
-int sumSubarrayMins(vector<int>& arr) {
+void sumSubarrayMins(vector<int>& arr) {
   int n = arr.size();
         vector<int> leftOptions;
         vector<int> rightOptions;
-        stack<pair<int, int>> st;
+        stack<pair<int, int>> st,sta;
+
+        
 
         for(int i = 0; i < arr.size(); i++) {
             while(!st.empty() && st.top().first >= arr[i]) {
                 st.pop();
+                sta.pop();
             }
             leftOptions.push_back((st.empty() 
                 ? i + 1 
                 : i - st.top().second)
             );
             st.push({arr[i], i});
+            sta.push({arr[i], i});
+        }
+        cout<<"left"<<endl;
+        for(auto it :leftOptions){
+          cout<<it<<" ";
+        }
+        cout<<endl;
+        cout<<endl;
+        cout<<"stack"<<endl;
+        while(!sta.empty()){
+          cout<<sta.top().first<<" "<<sta.top().second<<endl;
+          sta.pop();
         }
 
+        cout<<endl;
+        cout<<endl;
+
+
+        
+
         while(!st.empty()) st.pop();
+        while(!sta.empty()) sta.pop();
+
+        cout<<"right for loop"<<endl;
+
+        // cout<<1<<endl;
+        // cout<<1<<endl;
+        // cout<<1<<endl;
+        // cout<<1<<endl;
 
         for(int i = arr.size() - 1; i >= 0; i--) {
+          // cout<<i<<endl;
             while(!st.empty() && st.top().first > arr[i]) {
                 st.pop();
+                sta.pop();
             }
+
+            // cout<<i<<endl;
+
+            // cout  << ", st.top().second = " << st.top().second << endl;
+
+            cout<<i<<endl;
+
+              //  printf("Number: %d, Message: %s\n", i, st.top().second);
             rightOptions.push_back((st.empty() 
                 ? n - i 
                 : st.top().second - i)
             );
             st.push({arr[i], i});
+            sta.push({arr[i], i});
         }
+
+        cout<<"chatGPT"<<endl;
+
+        cout<<endl;
+
+
+
+        cout<<"right"<<endl;
+        for(auto it :rightOptions){
+          cout<<it<<" ";
+        }
+        cout<<endl;
+        cout<<endl;
+        cout<<"stack"<<endl;
+        while(!sta.empty()){
+          cout<<sta.top().first<<" "<<sta.top().second<<endl;
+          sta.pop();
+        }
+
+        cout<<endl;
+        cout<<endl;
 
 
         reverse(rightOptions.begin(), rightOptions.end());
@@ -47,7 +108,7 @@ int sumSubarrayMins(vector<int>& arr) {
         }
 
 
-        return (int)res;        
+        // return res;        
 }
 
 
@@ -65,7 +126,8 @@ int main()
   cin>>arr[i];
  }
 
- cout<<sumSubarrayMins(arr)<<endl;
+ sumSubarrayMins(arr);
+//  cout<<sumSubarrayMins(arr)<<endl;
  
   
 }
