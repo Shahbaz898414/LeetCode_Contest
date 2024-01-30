@@ -31,3 +31,26 @@ int main()
 //   cout<<minOperationsToSpecial(s)<<endl;
 
 }
+
+
+
+
+
+/*
+
+
+Today was my 15th day out of the 75 days hard challenge.
+So today. I solved 5 question.
+
+1. B - Swap and Delete (https://codeforces.com/contest/1913/problem/B)
+
+2. 232. Implement Queue using Stacks (https://lnkd.in/d-3AqGqt).
+
+3. D - Three Activities (https://lnkd.in/dUKZ74QJ).
+
+4. E2 - Game with Marbles (Hard Version) (https://lnkd.in/dSW2cJnk).
+
+5. C. Closest Cities (https://lnkd.in/daQT-FSj).
+
+
+*/
