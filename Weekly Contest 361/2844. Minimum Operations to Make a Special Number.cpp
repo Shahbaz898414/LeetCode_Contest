@@ -28,6 +28,6 @@ int main()
 
   string s;cin>>s;
 
-  cout<<minOperationsToSpecial(s)<<endl;
+//   cout<<minOperationsToSpecial(s)<<endl;
 
 }
